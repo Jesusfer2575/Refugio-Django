@@ -1,10 +1,10 @@
 {% extends 'base/base.html' %}
-{% block title %} Agregar mascota {% endblock %}
+{% block title %} Agregar rescatista {% endblock %}
 
 {% block content %}
 <div class="container">
 	<div>
-		<h3>Crear registro de mascota</h3>
+		<h3>Crear registro de rescatista</h3>
 		<br/>
 	</div>
 	<form method="post">
@@ -16,8 +16,8 @@
 	  	</div>
 
 	  	<div class="form-group">
-	    	<label for="exampleInputEmail1">Tipo</label>
-	    	{{ form.tipo }}
+	    	<label for="exampleInputEmail1">Apellidos</label>
+	    	{{ form.apellidos }}
 	    	<small id="emailHelp" class="form-text text-muted">Escribe que animal es tu mascota.</small>
 	  	</div>
 
@@ -28,20 +28,20 @@
 	  	</div>
 
 	  	<div class="form-group">
-	    	<label for="exampleInputEmail1">Fecha de rescate</label>
-	    	{{ form.fecha_rescate }}
+	    	<label for="exampleInputEmail1">Teléfono</label>
+	    	{{ form.telefono }}
 	    	<small id="emailHelp" class="form-text text-muted">¿Cuando recuerdas aproximadamente que fue rescatada?</small>
 	  	</div>
 
 	  	<div class="form-group">
-	    	<label for="exampleInputEmail1">Persona</label>
-	    	{{ form.persona }}
+	    	<label for="exampleInputEmail1">Email</label>
+	    	{{ form.email }}
 	    	<small id="emailHelp" class="form-text text-muted">Tendrás que seleccionar la persona que la rescató. Si no te encuentras en los registros es posible que debas ir al apartado de "Agregar rescatista".</small>
 	  	</div>
 
 	  	<div class="form-group">
-	    	<label for="exampleInputEmail1">Vacuna</label>
-	    	{{ form.vacuna }}
+	    	<label for="exampleInputEmail1">Domicilio</label>
+	    	{{ form.domicilio }}
 	    	<small id="emailHelp" class="form-text text-muted">Elije por favor el nombre de tu vacuna.</small>
 	  	</div>
 
