@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% block title %} Agregar vacuna {% endblock %}
+
+{% block content %}
+<div class="container">
+	<div>
+		<h3>Crear registro de una vacuna</h3>
+		<br/>
+	</div>
+	<form method="post">
+		{% csrf_token %}
+		<div class="form-group">
+	    	<label for="nombreHelp">Nombre</label>
+	    	{{ form.nombre }}
+	    	<small id="nombreHelp" class="form-text text-muted">Escribe el nombre de la vacuna aquí.</small>
+	  	</div>
+
+	  	<div class="form-group">
+	    	<label for="exampleInputCaducidad">Caducidad</label>
+	    	{{ form.caducidad }}
+	    	<small id="caducidadHelp" class="form-text text-muted">Escribe que la fecha de caducidad aquí.</small>
+	  	</div>
+
+	  	<button type="submit" class="btn btn-primary">Guardar</button>
+	</form>
+</div>
+	
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'base/base.html' %}
+{% block title %} Agregar mascota {% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<table class="table">
+	  	<thead>
+	    	<tr>
+	      		<th scope="col">#</th>
+		      	<th scope="col">Nombre</th>
+		      	<th scope="col">Tipo</th>
+		      	<th scope="col">Edad</th>
+		      	<th scope="col">Fecha de rescate</th>
+		      	<th scope="col">Rescatista</th>
+		      	<th scope="col">Vacuna</th>
+		      	<th scope="col">Acciones</th>
+	    	</tr>
+	 	</thead>
+	  	<tbody>
+
+	  		<!-- This is an example using ListView class -->
+
+	  		{% if object_list %}
+	  			{% for mascota in object_list %}
+	  				<tr>
+			    		<td>
+			    			{{mascota.id}}
+			    		</td>
+			      		<td>
+			      			{{ mascota.nombre }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.tipo }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.edad }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.fecha_rescate }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.persona.nombre }} {{ mascota.persona.apellidos }}
+			      		</td>
+
+			      		<td>
+			      			{% for vacuna in mascota.vacuna.all %}
+			      				{{ vacuna.nombre }},
+			      			{% endfor %}
+			      		</td>
+			      		<td>
+			      			<a href="{% url 'mascota:editar' mascota.id %}" class="btn btn-warning">Editar</a>
+			      			<a href="{% url 'mascota:eliminar' mascota.id %}" class="btn btn-danger">Eliminar</a>
+			      			
+			      		</td>
+			    	</tr>
+	  			{% endfor %}
+	  		{% else %}
+				<h1>No existen por el momento registros de mascotas</h1>
+			{% endif %}
+
+			<!-- This is an example using method to show a view -->
+	  		<!--{% if mascotas %}
+	  			{% for mascota in mascotas %}
+			    	<tr>
+			    		<td>
+			    			{{mascota.id}}
+			    		</td>
+			      		<td>
+			      			{{ mascota.nombre }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.tipo }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.edad }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.fecha_rescate }}
+			      		</td>
+
+			      		<td>
+			      			{{ mascota.persona.nombre }} {{ mascota.persona.apellidos }}
+			      		</td>
+
+			      		<td>
+			      			{% for vacuna in mascota.vacuna.all %}
+			      				{{ vacuna.nombre }},
+			      			{% endfor %}
+			      		</td>
+			    	</tr>
+			    {% endfor %}
+			{% else %}
+				<h1>No existen por el momento registros de mascotas</h1>
+			{% endif %}-->
+	    	
+	  	</tbody>
+	</table>
+</div>
+	
+
+{% endblock %}
