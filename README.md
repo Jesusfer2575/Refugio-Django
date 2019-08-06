@@ -71,5 +71,5 @@ sudo ufw allow 8000
 18) Corremos el proyecto con
 python manage.py runserver
 
-19)Por último validamos que este corriendo localmente en cualquiera navegador
+19) Por último validamos que este corriendo localmente en cualquiera navegador
 http://localhost:8000
